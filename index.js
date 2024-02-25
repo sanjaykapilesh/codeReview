@@ -1,8 +1,18 @@
-// Loops the users array and based on the
-function users(users) {
-  for (const i = 0; i < users.length; i++) {
-    if (users[i].age < 18) {
-      users.splice(i, 1)
+/**
+ * Filters out users below the age of 18 from the given array.
+ *
+ * @param {Array} users - An array of user objects with 'age' property.
+ * @returns {Array} - A new array containing only users above or equal to 18 years of age.
+ */
+function filterUsers(users) {
+  // Create a new array to store filtered users
+  const filteredUsers = [];
+
+  for (const user of users) {
+    if (user.age >= 18) {
+      // Add users who meet the condition to the new array
+      filteredUsers.push(user);
     }
-    return users;
   }
+  return filteredUsers;
+}
